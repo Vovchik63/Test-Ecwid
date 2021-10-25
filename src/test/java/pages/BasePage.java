@@ -28,9 +28,9 @@ public class BasePage {
 
 
 
-    public  double getIntValueFromElement(By element){
+    public  double getDoubleValueFromElement(By element){
         WebElement element1 = driver.findElement(element);
-        String pre_res = element1.getText().replaceAll("[а-я-А-Я-a-z-A-Z-$]","").trim();
+        String pre_res = element1.getText().replaceAll("[\\D]","").trim();
         return Double.parseDouble(pre_res);
 
     }

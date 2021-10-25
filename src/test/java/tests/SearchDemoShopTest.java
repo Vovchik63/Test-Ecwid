@@ -17,28 +17,28 @@ import static util.Sort.NEW;
 
 public class SearchDemoShopTest extends BaseTest {
     @Test
-    public void mensApparelFilter(){
+    public void mensApparelFilterTest(){
        steps.executeCheckForManApparelFilter()
                .verifyThatMensApparelFilterIsWork();
     }
     @Test
-    public void womanApparelFilter(){
+    public void womanApparelFilterTest(){
         steps.executeCheckForWomanApparelFilter()
                 .verifyThatWomanApparelFilterIsWork();
     }
     @Test
-    public void surfboardsFilter(){
+    public void surfboardsFilterTest(){
         steps.executeCheckForSurfboardsFilter()
                 .verifySurboardsFilterIsWork();
     }
     @Test(dataProvider = "dataProviderSizeFilters")
-    public void sizeFilter(SizeFilters filters){
+    public void sizeFilterTest(SizeFilters filters){
         steps.executeCheckForSizeFilter(filters)
                 .verifySizeFilterIsWork(filters);
 }
 
     @Test
-    public void PriceFilter(){
+    public void priceFilterTest(){
 
      try {
          steps.executeMovePriceSlider()
@@ -52,8 +52,8 @@ public class SearchDemoShopTest extends BaseTest {
 
     @Test(dataProvider = "dataProviderSort")
     public void SortRelevance(Sort sort){
-    steps.executeClickForSortButton(NEW)
-            .verifySortButtonIsWork(NEW);
+    steps.executeClickForSortButton(sort)
+            .verifySortButtonIsWork(sort);
     }
 
 

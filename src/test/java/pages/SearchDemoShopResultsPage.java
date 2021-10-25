@@ -121,7 +121,7 @@ public class SearchDemoShopResultsPage extends BasePage {
     }
 
     public double getValueFromPriceFilterResult(){
-        return getIntValueFromElement(By.cssSelector(PRICE_VALUE_RESULT));
+        return getDoubleValueFromElement(By.cssSelector(PRICE_VALUE_RESULT));
 
     }
 
@@ -143,7 +143,7 @@ public class SearchDemoShopResultsPage extends BasePage {
         List<WebElement> list = getArrayWebElements(By.cssSelector("div.grid-product__price-value.ec-price-item"));
         List<Double> result = new ArrayList<>();
         for (WebElement element:list){
-            Double resValue = Double.valueOf(element.getText().replaceAll("[а-я-А-Я-a-z-A-Z-$]",""));
+            Double resValue = Double.valueOf(element.getText().replaceAll("\\$",""));
             result.add(resValue);
         }
         Collections.sort(result);
